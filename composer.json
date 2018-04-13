@@ -1,10 +1,7 @@
 {
   "name": "mero/boleto",
-  "description": "Library for register and generate payment slip of brazilian banks.",
+  "description": "Biblioteca para registrar e gerar boletos.",
   "keywords": [
-    "register",
-    "generate",
-    "payment slip",
     "registrar",
     "gerar",
     "boleto"
@@ -22,20 +19,22 @@
     }
   ],
   "require": {
-    "ext-soap": "*"
+    "php": "^7.0.0",
+    "ext-soap": "*",
+    "twig/twig": "^1.35|^2.4.4"
   },
   "require-dev": {
-    "phpunit/phpunit": "^5.6",
+    "phpunit/phpunit": "^6",
     "satooshi/php-coveralls": "~1.0"
   },
   "autoload": {
     "psr-4": {
-      "Mero\\PaymentSlip\\": "src/Mero/PaymentSlip"
+      "Mero\\Boleto\\": "src/Mero/Boleto"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mero\\PaymentSlip\\": "tests/Mero/PaymentSlip"
+      "Mero\\Boleto\\": "tests/Mero/Boleto"
     }
   },
   "scripts": {

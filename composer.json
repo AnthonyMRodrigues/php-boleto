@@ -1,0 +1,46 @@
+{
+  "name": "mero/boleto",
+  "description": "Library for register and generate payment slip of brazilian banks.",
+  "keywords": [
+    "register",
+    "generate",
+    "payment slip",
+    "registrar",
+    "gerar",
+    "boleto"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/merorafael/php-boleto/issues",
+    "source": "https://github.com/merorafael/php-boleto"
+  },
+  "authors": [
+    {
+      "name": "Rafael Mello",
+      "email": "merorafael@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-soap": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.6",
+    "satooshi/php-coveralls": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mero\\PaymentSlip\\": "src/Mero/PaymentSlip"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mero\\PaymentSlip\\": "tests/Mero/PaymentSlip"
+    }
+  },
+  "scripts": {
+    "test": [
+      "phpunit"
+    ]
+  }
+}

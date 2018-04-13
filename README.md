@@ -1,2 +1,4 @@
-# php-boleto
-Biblioteca responsável por gerar boletos registrados
+php-boleto
+==========
+
+Library for register and generate payment slip of brazilian banks.

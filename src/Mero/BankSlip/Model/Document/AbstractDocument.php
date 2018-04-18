@@ -12,6 +12,7 @@ abstract class AbstractDocument
     public function __construct($number)
     {
         $this->number = $number;
+        $this->validate();
     }
 
     /**
@@ -40,10 +41,8 @@ abstract class AbstractDocument
 
     /**
      * Validate if this document has a valid number.
-     *
-     * @return bool
      */
-    abstract public function validate(): bool;
+    abstract protected function validate();
 
     /**
      * Return the formatted number of document.

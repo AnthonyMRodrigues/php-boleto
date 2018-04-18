@@ -7,9 +7,8 @@ class Cpf extends AbstractDocument
     /**
      * @inheritDoc
      */
-    public function validate(): bool
+    protected function validate()
     {
-        return true;
     }
 
     /**

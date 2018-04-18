@@ -1,10 +1,10 @@
 php-boleto
 ==========
 
-Biblioteca para registrar e gerar boletos.
+Library for register and issue brazilian bank slip.
 
-Requisitos
-----------
+Requirements
+------------
 
-- PHP 7.0.0 ou superior
-- SOAP
+- PHP 7.0.0 or above
+- SOAP extension

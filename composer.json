@@ -1,10 +1,10 @@
 {
   "name": "mero/boleto",
-  "description": "Biblioteca para registrar e gerar boletos.",
+  "description": "Library for register and issue brazilian bank slip.",
   "keywords": [
-    "registrar",
-    "gerar",
-    "boleto"
+    "boleto",
+    "emitir",
+    "registrar"
   ],
   "type": "library",
   "license": "MIT",
@@ -29,12 +29,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Mero\\Boleto\\": "src/Mero/Boleto"
+      "Mero\\BankSlip\\": "src/Mero/BankSlip"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mero\\Boleto\\": "tests/Mero/Boleto"
+      "Mero\\BankSlip\\": "tests/Mero/BankSlip"
     }
   },
   "scripts": {

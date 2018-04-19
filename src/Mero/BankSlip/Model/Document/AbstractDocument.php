@@ -26,20 +26,6 @@ abstract class AbstractDocument
     }
 
     /**
-     * Define the number of document.
-     *
-     * @param string $number Number
-     *
-     * @return AbstractDocument
-     */
-    public function setNumber(string $number): AbstractDocument
-    {
-        $this->number = $number;
-
-        return $this;
-    }
-
-    /**
      * Validate if this document has a valid number.
      */
     abstract protected function validate();
@@ -58,6 +44,4 @@ abstract class AbstractDocument
     {
         return $this->getFormattedNumber();
     }
-
-
 }

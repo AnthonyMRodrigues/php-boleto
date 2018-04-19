@@ -5,13 +5,13 @@
         <log type="coverage-clover" target="build/logs/clover.xml"/>
     </logging>
     <testsuites>
-        <testsuite name="Payment Slip Test Suite">
-            <directory>./tests/Mero/PaymentSlip/</directory>
+        <testsuite name="Bank Slip Test Suite">
+            <directory>./tests/Mero/BankSlip/</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist>
-            <directory suffix=".php">./src/Mero/PaymentSlip/</directory>
+            <directory suffix=".php">./src/Mero/BankSlip/</directory>
         </whitelist>
     </filter>
 </phpunit>

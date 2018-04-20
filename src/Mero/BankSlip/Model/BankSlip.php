@@ -43,20 +43,6 @@ class BankSlip
     {
         return $this->bankNumber;
     }
-
-    /**
-     * Define the bank number.
-     *
-     * @param int $bankNumber Bank number
-     *
-     * @return BankSlip
-     */
-    public function setBankNumber(int $bankNumber): BankSlip
-    {
-        $this->bankNumber = $bankNumber;
-        return $this;
-    }
-
     /**
      * Return the title information.
      *
@@ -65,19 +51,6 @@ class BankSlip
     public function getTitle(): Title
     {
         return $this->title;
-    }
-
-    /**
-     * Define the title information.
-     *
-     * @param Title $title Title
-     *
-     * @return BankSlip
-     */
-    public function setTitle(Title $title): BankSlip
-    {
-        $this->title = $title;
-        return $this;
     }
 
     /**
@@ -91,19 +64,6 @@ class BankSlip
     }
 
     /**
-     * Define the buyer information.
-     *
-     * @param Agent $buyer Buyer
-     *
-     * @return BankSlip
-     */
-    public function setBuyer(Agent $buyer): BankSlip
-    {
-        $this->buyer = $buyer;
-        return $this;
-    }
-
-    /**
      * Return the recipient information.
      *
      * @return Agent Recipient
@@ -111,19 +71,6 @@ class BankSlip
     public function getRecipient(): Agent
     {
         return $this->recipient;
-    }
-
-    /**
-     * Define the recipient information.
-     *
-     * @param Agent $recipient Recipient
-     *
-     * @return BankSlip
-     */
-    public function setRecipient(Agent $recipient): BankSlip
-    {
-        $this->recipient = $recipient;
-        return $this;
     }
 
     /**
@@ -140,13 +87,10 @@ class BankSlip
      * Define the bar code.
      *
      * @param string $barCode Bar code
-     *
-     * @return BankSlip
      */
-    public function setBarCode(string $barCode): BankSlip
+    public function setBarCode(string $barCode)
     {
         $this->barCode = $barCode;
-        return $this;
     }
 
     /**
@@ -163,12 +107,9 @@ class BankSlip
      * Define the digitable line.
      *
      * @param string $digitableLine Digitable line
-     *
-     * @return BankSlip
      */
-    public function setDigitableLine(string $digitableLine): BankSlip
+    public function setDigitableLine(string $digitableLine)
     {
         $this->digitableLine = $digitableLine;
-        return $this;
     }
 }

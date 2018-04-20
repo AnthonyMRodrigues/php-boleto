@@ -71,20 +71,6 @@ class Address
     }
 
     /**
-     * Define the street of address.
-     *
-     * @param string $street Street
-     *
-     * @return Address
-     */
-    public function setStreet(string $street): Address
-    {
-        $this->street = $street;
-
-        return $this;
-    }
-
-    /**
      * Return the number of address.
      *
      * @return string Number
@@ -92,20 +78,6 @@ class Address
     public function getNumber(): string
     {
         return $this->number;
-    }
-
-    /**
-     * Define the number of address.
-     *
-     * @param string $number Number
-     *
-     * @return Address
-     */
-    public function setNumber(string $number): Address
-    {
-        $this->number = $number;
-
-        return $this;
     }
 
     /**
@@ -119,19 +91,6 @@ class Address
     }
 
     /**
-     * Define the complement of address.
-     *
-     * @param string $complement Complement
-     *
-     * @return Address
-     */
-    public function setComplement(string $complement): Address
-    {
-        $this->complement = $complement;
-        return $this;
-    }
-
-    /**
      * Return the ZIP code of address.
      *
      * @return string ZIP code
@@ -139,20 +98,6 @@ class Address
     public function getZipCode(): string
     {
         return $this->zipCode;
-    }
-
-    /**
-     * Define the ZIP code of address.
-     *
-     * @param string $zipCode ZIP code
-     *
-     * @return Address
-     */
-    public function setZipCode(string $zipCode): Address
-    {
-        $this->zipCode = $zipCode;
-
-        return $this;
     }
 
     /**
@@ -166,20 +111,6 @@ class Address
     }
 
     /**
-     * Define the city of address.
-     *
-     * @param string $city City
-     *
-     * @return Address
-     */
-    public function setCity(string $city): Address
-    {
-        $this->city = $city;
-
-        return $this;
-    }
-
-    /**
      * Return the district of address.
      *
      * @return string District
@@ -190,20 +121,6 @@ class Address
     }
 
     /**
-     * Define the district of address.
-     *
-     * @param string $district District
-     *
-     * @return Address
-     */
-    public function setDistrict(string $district): Address
-    {
-        $this->district = $district;
-
-        return $this;
-    }
-
-    /**
      * Return state code of address.
      *
      * @return string State code
@@ -211,19 +128,5 @@ class Address
     public function getStateCode(): string
     {
         return $this->stateCode;
-    }
-
-    /**
-     * Define state code of address.
-     *
-     * @param string $stateCode State code
-     *
-     * @return Address
-     */
-    public function setStateCode(string $stateCode): Address
-    {
-        $this->stateCode = $stateCode;
-
-        return $this;
     }
 }

@@ -26,10 +26,10 @@ class Title
 
     /**
      * Title constructor.
-     * @param \DateTime $expireDate
-     * @param float $amount
-     * @param string $ourNumber
-     * @param string $instructions
+     * @param \DateTime $expireDate Expire date
+     * @param float $amount Amount
+     * @param string $ourNumber Our number
+     * @param string $instructions Instructions
      */
     public function __construct(\DateTime $expireDate, float $amount, string $ourNumber, string $instructions)
     {

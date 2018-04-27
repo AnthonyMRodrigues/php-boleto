@@ -40,6 +40,34 @@ class BankSlip
     protected $digitableLine;
 
     /**
+     * BankSlip constructor.
+     * @param int $bankNumber
+     * @param Agreement $agreement
+     * @param Title $title
+     * @param Agent $buyer
+     * @param Agent $recipient
+     * @param string $barCode
+     * @param string $digitableLine
+     */
+    public function __construct(
+        int $bankNumber,
+        Agreement $agreement,
+        Title $title,
+        Agent $buyer,
+        Agent $recipient,
+        string $barCode,
+        string $digitableLine
+    ) {
+        $this->bankNumber = $bankNumber;
+        $this->agreement = $agreement;
+        $this->title = $title;
+        $this->buyer = $buyer;
+        $this->recipient = $recipient;
+        $this->barCode = $barCode;
+        $this->digitableLine = $digitableLine;
+    }
+
+    /**
      * Return the bank number.
      *
      * @return int Bank number

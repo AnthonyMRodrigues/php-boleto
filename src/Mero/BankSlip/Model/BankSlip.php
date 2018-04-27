@@ -10,6 +10,11 @@ class BankSlip
     protected $bankNumber;
 
     /**
+     * @var Agreement Agreement information
+     */
+    protected $agreement;
+
+    /**
      * @var Title Title information
      */
     protected $title;
@@ -43,6 +48,17 @@ class BankSlip
     {
         return $this->bankNumber;
     }
+
+    /**
+     * Return the agreement information.
+     *
+     * @return Agreement Agreement
+     */
+    public function getAgreement(): Agreement
+    {
+        return $this->agreement;
+    }
+
     /**
      * Return the title information.
      *

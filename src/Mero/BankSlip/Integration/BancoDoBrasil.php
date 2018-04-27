@@ -7,6 +7,7 @@ use Mero\BankSlip\Integration\BancoDoBrasil\AuthorizationToken;
 use Mero\BankSlip\Integration\BancoDoBrasil\Environment;
 use Mero\BankSlip\Integration\Exception\AuthorizationTokenExpiredException;
 use Mero\BankSlip\Integration\Exception\AuthorizationTokenNotFoundException;
+use Mero\BankSlip\Integration\Exception\RegisterFailedException;
 use Mero\BankSlip\Model\BankSlip;
 
 class BancoDoBrasil implements IntegrationInterface
@@ -67,6 +68,7 @@ class BancoDoBrasil implements IntegrationInterface
      *
      * @throws AuthorizationTokenNotFoundException When authorization token is not found
      * @throws AuthorizationTokenExpiredException When authorization token is expired
+     * @throws RegisterFailedException When the integration failed to register bank slip
      */
     public function register(BankSlip $bankSlip): BankSlip
     {
@@ -95,12 +97,14 @@ class BancoDoBrasil implements IntegrationInterface
             ]
         );
 
+        $issueDate = new \DateTime();
+
         $response = $client->__soapCall('requisicao', [
             'numeroConvenio' => $bankSlip->getAgreement()->getAgreementNumber(),
             'numeroCarteira' => $bankSlip->getAgreement()->getWallet(),
             'numeroVariacaoCarteira' => $bankSlip->getAgreement()->getWalletVariation(),
             'codigoModalidadeTITULO' => 1,
-            'dataEmissaoTITULO' => (new \DateTime())->format('d.M.y'),
+            'dataEmissaoTITULO' => $issueDate->format('d.M.y'),
             'dataVencimentoTITULO' => $bankSlip->getTitle()->getExpireDate()->format('d.M.y'),
             'valorOriginalTITULO' => $bankSlip->getTitle()->getAmount(),
             'codigoTipoDesconto' => 0,
@@ -128,6 +132,14 @@ class BancoDoBrasil implements IntegrationInterface
             'codigoChaveUsuario' => 1,
             'codigoTipoCanalSolicitacao' => 5,
         ]);
+
+        if (!empty($response->resposta->textoMensagemErro)) {
+            throw new RegisterFailedException($response->resposta->textoMensagemErro);
+        }
+
+        $bankSlip->setDigitableLine($response->resposta->linhaDigitavel);
+        $bankSlip->setBarCode($response->resposta->codigoBarraNumerico);
+        $bankSlip->setIssueDate($issueDate);
 
         return $bankSlip;
     }

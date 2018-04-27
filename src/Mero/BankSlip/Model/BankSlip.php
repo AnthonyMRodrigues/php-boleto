@@ -40,6 +40,11 @@ class BankSlip
     protected $digitableLine;
 
     /**
+     * @var \DateTime Issue date
+     */
+    protected $issueDate;
+
+    /**
      * BankSlip constructor.
      * @param int $bankNumber
      * @param Agreement $agreement
@@ -149,5 +154,25 @@ class BankSlip
     public function setDigitableLine(string $digitableLine)
     {
         $this->digitableLine = $digitableLine;
+    }
+
+    /**
+     * Return the issue date.
+     *
+     * @return \DateTime Issue date
+     */
+    public function getIssueDate(): \DateTime
+    {
+        return $this->issueDate;
+    }
+
+    /**
+     * Define the issue date.
+     *
+     * @param \DateTime $issueDate Issue date
+     */
+    public function setIssueDate(\DateTime $issueDate = null)
+    {
+        $this->issueDate = $issueDate;
     }
 }

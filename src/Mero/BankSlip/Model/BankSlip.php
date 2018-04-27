@@ -46,25 +46,19 @@ class BankSlip
      * @param Title $title
      * @param Agent $buyer
      * @param Agent $recipient
-     * @param string $barCode
-     * @param string $digitableLine
      */
     public function __construct(
         int $bankNumber,
         Agreement $agreement,
         Title $title,
         Agent $buyer,
-        Agent $recipient,
-        string $barCode,
-        string $digitableLine
+        Agent $recipient
     ) {
         $this->bankNumber = $bankNumber;
         $this->agreement = $agreement;
         $this->title = $title;
         $this->buyer = $buyer;
         $this->recipient = $recipient;
-        $this->barCode = $barCode;
-        $this->digitableLine = $digitableLine;
     }
 
     /**
